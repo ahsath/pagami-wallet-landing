@@ -1,0 +1,29 @@
+---
+import { Image } from 'astro:assets';
+import vistaCambios from '../img/vista-cambios.png';
+---
+
+<section class="section container">
+    <div>
+        <h2 class="section__subtitle h1 text-center">
+            Olvídate de vueltos <br />
+            en Bolívares.
+        </h2>
+        <div class="section__paragraph text-center">
+            <h3 class="h3">
+                Paga, Envía, Recibe y Retira hasta el último centavo en Dólares
+            </h3>
+            <p class="h3">
+                de tus amigos y familiares o de cualquier establecimiento
+                aliado.
+            </p>
+        </div>
+    </div>
+    <Image
+        class="section__img max-w-xl"
+        src={vistaCambios}
+        widths={[200, 613, 849, vistaCambios.width]}
+        sizes={`(max-width: 969px) 100vw, ${vistaCambios.width}px`}
+        alt="Teléfono que muestra la transacción de dinero recibido en Pagami Wallet"
+    />
+</section>

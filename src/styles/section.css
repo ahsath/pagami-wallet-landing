@@ -1,0 +1,41 @@
+.section {
+    display: grid;
+    row-gap: 70px;
+
+    .section__title,
+    .section__subtitle {
+        color: var(--md-ref-color-white);
+    }
+
+    .section__title + .section__subtitle,
+    .section__subtitle + .section__paragraph {
+        margin-top: 16px;
+    }
+
+    .section__paragraph :where(h3, p) {
+        display: inline;
+    }
+
+    .section__text {
+        margin-top: 16px;
+    }
+
+    .section__img {
+        width: 100%;
+        margin-inline: auto;
+    }
+
+    & h3 {
+        color: var(--md-ref-color-white);
+    }
+
+    & p {
+        color: var(--md-ref-neutral-variant60);
+    }
+
+    @media (width >= 768px) {
+        & {
+            row-gap: 100px;
+        }
+    }
+}

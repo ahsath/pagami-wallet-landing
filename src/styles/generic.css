@@ -1,0 +1,41 @@
+html {
+    scrollbar-color: var(--md-sys-color-outline) var(--md-sys-color-surface-container);
+}
+
+body {
+    display: grid;
+    row-gap: 100px;
+    background-color: var(--md-sys-color-surface);
+
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        background-image: linear-gradient(155deg, rgb(var(--md-ref-neutral17)) -60%, rgb(var(--md-ref-neutral17) / 0) 50%);
+    }
+
+    @media (width >= 768px) {
+        & {
+            row-gap: 200px;
+        }
+    }
+}
+
+main {
+    display: contents;
+}
+
+.text-gradient {
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    background-clip: text;
+
+    &.text-gradient--theme_secondary {
+        background-image: linear-gradient(to right, var(--md-sys-color-secondary-fixed), var(--md-ref-key-color-secondary));
+    }
+}

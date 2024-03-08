@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import landPresale from "../img/land-presale.png";
+---
+
+<section class="section container">
+    <div>
+        <h2 class="section__title">Pre-venta</h2>
+        <h3 class="section__subtitle h1">Invierte en Las Tierras del Mañana.</h3>
+        <p class="section__text h3">
+            Prepárate para participar en la primera oferta inicial de 90 Tierras Virtuales de un Mundo Abierto con infinitas posibilidades de una nueva era de economía virtual.
+        </p>
+    </div>
+    <Image class="section__img max-w-xss" src={landPresale} alt="" />
+</section>
+
+<style>
+    .section {
+        column-gap: 24px;
+        align-items: center;
+        position: relative;
+
+        .section__title {
+            display: inline-block;
+            border: 2px solid transparent;
+            border-radius: 9999px;
+            background:
+                linear-gradient(var(--md-sys-color-surface), var(--md-sys-color-surface)) padding-box,
+                radial-gradient(at top left, rgba(243, 186, 47, 1) 13%, rgba(80, 175, 149, 1) 37%, rgba(157, 202, 255, 1) 61%, rgba(246, 9, 222, 1) 87%) border-box;
+            padding: 12px 24px;
+        }
+
+        div {
+            text-align: center;
+        }
+
+        @media (width >= 768px) {
+            & {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: 100%;
+
+                div {
+                    text-align: left;
+                }
+            }
+        }
+    }
+</style>

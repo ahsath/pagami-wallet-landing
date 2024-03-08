@@ -1,0 +1,91 @@
+---
+import Headline from "./Headline.astro";
+import ScanTag from "./ScanTag.astro";
+import TapToScan from "./TapToScan.astro";
+import AimAndWait from "./AimAndWait.astro";
+import TypeAmount from "./TypeAmount.astro";
+import Done from "./Done.astro";
+---
+
+<section class="container">
+    <div class="trigger">
+        <Headline />
+        <ScanTag />
+        <TapToScan />
+        <AimAndWait />
+        <TypeAmount />
+        <Done />
+    </div>
+</section>
+
+<script>
+    import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline();
+
+    const stories = document.querySelectorAll(".pay-story");
+    stories.forEach((story, i) => {
+        tl.add(gsap.from(story, { opacity: 0 }));
+
+        if (stories.length - 1 !== i) {
+            tl.add(gsap.to(story, { opacity: 0 }));
+        }
+    });
+
+    ScrollTrigger.create({
+        animation: tl,
+        trigger: ".trigger",
+        pin: true,
+        end() {
+            let totalHeight = 0;
+
+            document.querySelectorAll(".pay-story").forEach((story) => {
+                const s = story as HTMLElement;
+                totalHeight += s.offsetHeight;
+            });
+
+            return `+=${totalHeight} bottom`;
+        },
+        scrub: true,
+    });
+</script>
+
+<style is:global>
+    .trigger {
+        height: 100dvh;
+    }
+
+    .pay-story {
+        display: grid;
+        gap: 32px;
+        grid-template-rows: min-content;
+        align-items: center;
+        justify-items: center;
+        height: 100dvh;
+        width: 100%;
+        padding-block: 32px;
+
+        position: absolute;
+
+        & h2 {
+            color: var(--md-ref-color-white);
+        }
+
+        .pay-story__img {
+            height: 100%;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        @media (width >= 768px) {
+            & {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: 100%;
+            }
+        }
+    }
+</style>

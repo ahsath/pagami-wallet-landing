@@ -1,0 +1,72 @@
+---
+import { Image } from 'astro:assets';
+import vistaRecargas from '../img/vista-recargas.png';
+import Badge from './Badge.astro';
+---
+
+<section class="section container">
+    <div>
+        <h2 class="section__title h2 text-center">Recargas</h2>
+        <p class="section__subtitle h1 text-center">
+            Tú eliges cómo quieres <br />
+            recargar tu billetera.
+        </p>
+    </div>
+    <Image
+        class="section__img max-w-xs"
+        src={vistaRecargas}
+        alt="Teléfono que muestra las diferentes formas de recargar en Pagami Wallet"
+    />
+    <div class="refill-options">
+        <div class="section__paragraph">
+            <h3 class="h3">Pago Móvil.</h3>
+            <p class="h3">
+                Deposita fondos en tu billetera con cualquier banco nacional en
+                segundos.
+            </p>
+        </div>
+        <div class="section__paragraph">
+            <h3 class="h3">Debito/Crédito.</h3>
+            <p class="h3">
+                Paga con tarjetas VISA, Mastercard y American Express sin salir
+                de la app.
+            </p>
+        </div>
+        <i aria-hidden="true" />
+        <Badge>Pronto</Badge>
+        <div class="section__paragraph">
+            <h3 class="h3">USDT TetherUS.</h3>
+            <p class="h3">
+                Puedes transferir tus USDT desde cualquier plataforma de
+                intercambio o billetera de terceros.
+            </p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .refill-options {
+        display: grid;
+        gap: 16px;
+
+        @media (width >= 768px) {
+            & {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+                div {
+                    grid-row: 2;
+                }
+
+                .badge {
+                    grid-column: 3;
+                }
+            }
+        }
+
+        @media (width >= 992px) {
+            & {
+                column-gap: 48px;
+            }
+        }
+    }
+</style>

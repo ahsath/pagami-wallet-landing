@@ -1,0 +1,17 @@
+.container {
+    max-width: 540px;
+    width: 90%;
+    margin-inline: auto;
+
+    @media (width >= 768px) {
+        & {
+            max-width: 720px;
+        }
+    }
+
+    @media (width >= 992px) {
+        & {
+            max-width: 960px;
+        }
+    }
+}

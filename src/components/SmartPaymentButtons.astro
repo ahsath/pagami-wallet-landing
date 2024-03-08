@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+import smartPaymentButtons from "../img/smart-payment-buttons.png";
+---
+
+<section class="section section__smart-payment-buttons">
+    <div class="container">
+        <h2 class="section__title h2 text-center">Próximamente</h2>
+        <h3 class="section__subtitle h1 text-center">Botones de Pago Inteligentes.</h3>
+        <p class="section__text h3 text-center">
+            Nuestra solución de pago en línea permite a tus clientes pagar los bienes y servicios que ofreces con solo hacer click en un botón. Al agregar un botón de pago a tu sitio web o aplicación
+            móvil puedes comenzar a recibir pagos en poco tiempo.
+        </p>
+    </div>
+    <div class="container">
+        <Image
+            widths={[600, 1034, 1391, 1679, 1947, smartPaymentButtons.width]}
+            sizes={`(max-width: 2075px) 100vw, ${smartPaymentButtons.width}px`}
+            class="section__img"
+            src={smartPaymentButtons}
+            alt="Una computadora portátil y un teléfono uno al lado del otro que muestra una página de pago con el botón de pago inteligente de Pagami"
+        />
+    </div>
+</section>
+
+<style>
+    .section__smart-payment-buttons {
+        padding-top: 100px;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background-image: linear-gradient(180deg, var(--md-sys-color-primary) -2000%, rgb(var(--md-sys-color-primary-container) / 0));
+        }
+
+        @media (width >= 768px) {
+            & {
+                padding-top: 200px;
+            }
+        }
+    }
+</style>

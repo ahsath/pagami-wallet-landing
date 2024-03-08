@@ -1,0 +1,15 @@
+.badge {
+    font-size: var(--md-sys-typescale-label-large-size);
+    line-height: var(--md-sys-typescale-label-large-line-height);
+    font-weight: var(--md-sys-typescale-label-large-weight);
+    letter-spacing: var(--md-sys-typescale-label-large-tracking);
+
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
+    border-radius: 8px;
+    padding-inline: 12px;
+    color: var(--md-sys-color-on-surface);
+    background-color: var(--md-sys-color-surface-container-high);
+    width: min-content;
+}

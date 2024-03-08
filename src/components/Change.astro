@@ -1,22 +1,17 @@
 ---
-import { Image } from 'astro:assets';
-import vistaCambios from '../img/vista-cambios.png';
+import { Image } from "astro:assets";
+import vistaCambios from "../img/vista-cambios.png";
 ---
 
 <section class="section container">
-    <div>
-        <h2 class="section__subtitle h1 text-center">
+    <div data-gsap-trigger>
+        <h2 class="section__subtitle h1 text-center" data-gsap-animate>
             Olvídate de vueltos <br />
             en Bolívares.
         </h2>
-        <div class="section__paragraph text-center">
-            <h3 class="h3">
-                Paga, Envía, Recibe y Retira hasta el último centavo en Dólares
-            </h3>
-            <p class="h3">
-                de tus amigos y familiares o de cualquier establecimiento
-                aliado.
-            </p>
+        <div class="section__paragraph text-center" data-gsap-animate>
+            <h3 class="h3">Paga, Envía, Recibe y Retira hasta el último centavo en Dólares</h3>
+            <p class="h3">de tus amigos y familiares o de cualquier establecimiento aliado.</p>
         </div>
     </div>
     <Image
